@@ -21,7 +21,6 @@ public class Season {
 
     private LocalDate releaseDate;
 
-    //    @ElementCollection
     @Singular
     @OneToMany(mappedBy = "season", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     @EqualsAndHashCode.Exclude
