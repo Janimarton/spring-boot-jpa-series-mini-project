@@ -19,11 +19,6 @@ import java.util.Arrays;
 @SpringBootApplication
 public class SeriesMiniProjectApplication {
 
-    @Autowired
-    private EpisodeRepository episodeRepository;
-
-    @Autowired
-    private SeasonRepository seasonRepository;
 
     @Autowired
     private SeriesRepository seriesRepository;
