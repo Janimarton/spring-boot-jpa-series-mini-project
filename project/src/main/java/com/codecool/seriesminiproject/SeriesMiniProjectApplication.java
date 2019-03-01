@@ -71,6 +71,7 @@ public class SeriesMiniProjectApplication {
                     .name("Another Period")
                     .seasons(Arrays.asList(firstSeason, secondSeason, thirdSeason))
                     .releaseDate(LocalDate.of(2015, 6, 23))
+                    .seasonsNum(3)
                     .build();
 
 

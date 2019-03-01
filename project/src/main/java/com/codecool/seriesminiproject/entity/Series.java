@@ -28,4 +28,7 @@ public class Series {
     private List<Season> seasons;
 
 
+    private Integer seasonsNum;
+
+
 }
