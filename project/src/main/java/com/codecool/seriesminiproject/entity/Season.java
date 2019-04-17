@@ -1,5 +1,6 @@
 package com.codecool.seriesminiproject.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Season {
     private LocalDate releaseDate;
 
     @Singular
+    @JsonIgnoreProperties({"season"})
     @OneToMany(mappedBy = "season", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     @EqualsAndHashCode.Exclude
     private List<Episode> episodes;
