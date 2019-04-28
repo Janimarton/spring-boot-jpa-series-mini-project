@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/series")
 public class SeriesController {
 
     @Autowired
@@ -15,19 +16,25 @@ public class SeriesController {
 
     private static final String SUCCESSFULLY = "The action was successfully";
 
-    @GetMapping("/series")
+    @GetMapping("/")
     public List<Series> getAllSeries() {
         return seriesService.getAllSeries();
     }
 
-    @GetMapping("/series/{id}")
+    @GetMapping("/{id}")
     public Series getSeries(@PathVariable long id) {
         return seriesService.getSeriesById(id);
     }
 
-    @PostMapping("/add-series")
+    @PostMapping("/add")
     public String addSeries(@RequestBody Series series) {
         seriesService.addSeries(series);
+        return SUCCESSFULLY;
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteSeries(@PathVariable long id) {
+        seriesService.deleteSeries(id);
         return SUCCESSFULLY;
     }
 

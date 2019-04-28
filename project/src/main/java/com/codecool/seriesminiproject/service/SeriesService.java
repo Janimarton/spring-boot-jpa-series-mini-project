@@ -31,4 +31,7 @@ public class SeriesService {
     }
 
 
+    public void deleteSeries(long id) {
+        seriesRepo.deleteById(id);
+    }
 }
