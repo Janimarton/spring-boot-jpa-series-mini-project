@@ -28,4 +28,12 @@ public class SeasonService {
         }
         return null;
     }
+
+    public void addSeason(Season season) {
+        seasonRepo.save(season);
+    }
+
+    public void deleteSeasonById(long id) {
+        seasonRepo.deleteById(id);
+    }
 }

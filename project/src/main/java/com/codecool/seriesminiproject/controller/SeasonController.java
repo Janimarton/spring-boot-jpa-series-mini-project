@@ -3,10 +3,7 @@ package com.codecool.seriesminiproject.controller;
 import com.codecool.seriesminiproject.entity.Season;
 import com.codecool.seriesminiproject.service.SeasonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,18 @@ public class SeasonController {
     @GetMapping("/{id}")
     public Season getSeason(@PathVariable long id) {
         return seasonService.getSeasonsById(id);
+    }
+
+    @PostMapping("/add")
+    public String addSeason(@RequestBody Season season) {
+        seasonService.addSeason(season);
+        return SUCCESSFULLY;
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteSeason(@PathVariable long id) {
+        seasonService.deleteSeasonById(id);
+        return SUCCESSFULLY;
     }
 
 }
