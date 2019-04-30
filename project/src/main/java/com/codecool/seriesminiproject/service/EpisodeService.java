@@ -25,4 +25,12 @@ public class EpisodeService {
         }
         return null;
     }
+
+    public void addEpisode(Episode episode) {
+        episodeRepo.save(episode);
+    }
+
+    public void deleteEpisodeById(long id) {
+        episodeRepo.deleteById(id);
+    }
 }
